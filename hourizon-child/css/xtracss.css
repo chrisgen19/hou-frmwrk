@@ -1,0 +1,85 @@
+/* XTRA CSS */
+
+#header {
+margin: 0 0 2.618em;
+padding: 1.618em 2em 1.618em;
+clear: both;
+position: relative;
+background: #343434;
+}
+
+#navigation ul.nav ul li a:hover {
+    background: #6c943b;
+  }
+
+ #navigation ul.nav > li.current_page_item a,
+  #navigation ul.nav > li.current_page_parent a,
+  #navigation ul.nav > li.current-menu-ancestor a,
+  #navigation ul.nav > li.current-cat a,
+  #navigation ul.nav > li.li.current-menu-item a {
+    background: #89b751;
+    -webkit-border-radius: 0.327em;
+    border-radius: 0.327em;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  }
+  
+#navigation ul.nav ul {
+background: #89b751;
+-webkit-border-radius: 0.327em;
+border-radius: 0.327em;
+-moz-background-clip: padding;
+-webkit-background-clip: padding-box;
+background-clip: padding-box;
+-webkit-border-top-left-radius: 0;
+border-top-left-radius: 0;
+}
+
+#navigation ul.nav > li.current_page_item a, #navigation ul.nav > li.current_page_parent a, #navigation ul.nav > li.current-menu-ancestor a, #navigation ul.nav > li.current-cat a, #navigation ul.nav > li.li.current-menu-item a
+{
+background: #89b751;
+-webkit-border-radius: 0.327em;
+border-radius: 0.327em;
+-moz-background-clip: padding;
+-webkit-background-clip: padding-box;
+background-clip: padding-box;
+color:#fff;
+}
+
+#navigation ul.nav > li:hover {
+background: #89b751;
+-webkit-border-radius: 0.327em;
+border-radius: 0.327em;
+-moz-background-clip: padding;
+-webkit-background-clip: padding-box;
+background-clip: padding-box;
+}
+
+#navigation ul.nav > li:hover a{
+color:#FFF;
+}
+
+#navigation ul.nav > li a:hover {
+color: #FFF;
+}
+
+#featured-slider {
+margin: 0 0 2.618em;
+padding: 0 2em .618em;
+background: #89b751;
+color: #fff;
+text-shadow: none;
+}
+
+#featured-slider .slide-content{
+	color:#FFF;
+}
+
+#top-section {
+margin: 0 0 2.618em;
+padding: 1.681em 0;
+background: #89b751;
+border: 1px solid #699736;
+border-width: 1px 0 0 0;
+}

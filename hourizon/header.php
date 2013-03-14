@@ -1,0 +1,83 @@
+<?php
+/**
+ * The Header for our theme.
+ *
+ * Displays all of the <head> section and everything up till <div id="main">
+ *
+ * @package Hourizon
+ * @since Hourizon 1.0
+ */
+ 
+  global $woo_options;
+  
+ // Get our website's name, description and URL. We use them several times below so lets get them once.
+ $site_title = get_bloginfo( 'name' );
+ $site_url = home_url( '/' );
+ $site_description = get_bloginfo( 'description' );
+  
+?><!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<!--[if lt IE 9]>
+<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<?php wp_head(); ?>
+<?php woo_head(); ?>
+
+	<script type="text/javascript" charset="utf-8">
+	  jQuery(window).load(function() {
+		jQuery('.flexslider').flexslider({
+			controlNav: false,
+			directionNav: false
+		});
+	  });
+	</script>
+
+</head>
+
+<body <?php body_class(); ?>>
+<div id="wrapper" class="hfeed site">
+
+	<?php do_action( 'before' ); ?>
+	
+	<header id="masthead" class="site-header" role="banner">
+	
+		<!-- LOGO & TITLE & DESC -->
+		<hgroup>
+			<div id="logo">
+			<?php
+				// Website heading/logo and description text.
+				if ( isset($woo_options['woo_logo']) && $woo_options['woo_logo'] ) {
+					echo '<a href="' . $site_url . '" title="' . $site_description . '"><img src="' . $woo_options['woo_logo'] . '" alt="' . $site_title . '" /></a>' . "\n";
+				}else{
+					?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+					<?php
+				}
+			?>
+			</div><!-- /#logo -->
+		</hgroup>
+
+		<!-- MAIN NAVIGATION MENU -->
+		<nav role="navigation" class="site-navigation main-navigation">
+		
+			<h1 class="assistive-text"><?php _e( 'Menu', 'hourizon' ); ?></h1>
+			
+			<div class="assistive-text skip-link">
+				<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'hourizon' ); ?>"><?php _e( 'Skip to content', 'hourizon' ); ?></a>
+			</div>
+
+			<?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
+
+		</nav><!-- .site-navigation .main-navigation -->
+	</header><!-- #masthead .site-header -->
+
+	<div id="main" class="site-main" >
